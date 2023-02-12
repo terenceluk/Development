@@ -1,0 +1,13 @@
+@Library('arcus-pipeline-library@master') _
+
+env.NAME = 'terraform-azurerm-keyvault'
+
+// Azure vars
+env.MODULE_TYPE = 'azure'
+
+// Troubleshooting vars
+//env.KITCHEN_DESTROY = 'passing'
+//env.KITCHEN_DESTROY = 'never'
+//env.KITCHEN_LOG = 'debug'
+
+terraformPipeline()

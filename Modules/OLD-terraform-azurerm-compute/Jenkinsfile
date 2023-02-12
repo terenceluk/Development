@@ -1,0 +1,23 @@
+@Library('arcus-pipeline-library@master') _
+
+env.NAME = 'terraform-azurerm-compute'
+
+// Azure vars
+env.MODULE_TYPE = 'azure'
+
+// Troubleshooting vars
+//env.IMAGE_KEEP = 'true'
+//env.KITCHEN_DESTROY = 'passing'
+//env.KITCHEN_DESTROY = 'never'
+//env.KITCHEN_LOG = 'debug'
+
+withCredentials(
+    [[
+        $class: 'UsernamePasswordMultiBinding',
+        credentialsId: 'SVC_VCO_IPAM',
+        usernameVariable: 'SVC_VCO_IPAM_USERNAME',
+        passwordVariable: 'SVC_VCO_IPAM_PASSWORD'
+    ]]
+){
+    terraformPipeline()
+}

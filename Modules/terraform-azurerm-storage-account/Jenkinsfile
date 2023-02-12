@@ -1,0 +1,16 @@
+@Library('arcus-pipeline-library@master') _
+
+env.NAME = 'terraform-azurerm-storage-account'
+
+// Azure vars
+env.MODULE_TYPE = 'azure'
+
+// Troubleshooting vars
+//env.PACKER_LOG = 1
+//env.PACKER_ON_ERROR = 'abort'
+//env.IMAGE_KEEP = 'true'
+//env.KITCHEN_DESTROY = 'passing'
+//env.KITCHEN_DESTROY = 'never'
+//env.KITCHEN_LOG = 'debug'
+
+terraformPipeline()

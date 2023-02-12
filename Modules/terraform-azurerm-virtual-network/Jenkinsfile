@@ -1,0 +1,15 @@
+@Library('arcus-pipeline-library@master') _
+
+env.NAME = 'terraform-azurerm-virtual-network'
+
+// Azure vars
+env.MODULE_TYPE = 'azure'
+
+// Troubleshooting vars
+//env.IMAGE_KEEP = 'true'
+//env.KITCHEN_DESTROY = 'passing'
+//env.KITCHEN_DESTROY = 'never'
+//env.KITCHEN_LOG = 'debug'
+//env.AZURE_SUBSCRIPTION_ID = 'e321efb2-bff7-4ec0-a4a7-c5f95abef641'
+
+terraformPipeline()

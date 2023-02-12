@@ -1,0 +1,8 @@
+resource_group_name = "ctc-nonprod-tfmodules-cc-rg"
+location            = "Canada Central"
+project_name        = "tfmodules"
+location_code       = "cc"
+environment         = "nonprod"
+vnet_name           = "ctc-nonprod-corenetwork-cc-vnet-04"
+subnet_name         = "ctc-nonprod-corenetwork-cc-vnet-04-app03-snet"
+vnet_rg             = "ctc-nonprod-corenetwork-cc-rg"
