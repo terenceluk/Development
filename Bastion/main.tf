@@ -8,6 +8,7 @@ module "setup_bastion_hosts" {
   source = "../Modules/terraform-azurerm-compute-linux" # Repository
   for_each = var.bastion_hosts
   ## General configuration
+  vm_name_override    = each.value["name"] 
   project_name        = var.project_name
   environment         = var.environment
   short_description   = var.description
@@ -31,17 +32,23 @@ module "setup_bastion_hosts" {
 
   ## Image configuration
   marketplace_image = {
+    publisher = "OpenLogic"
+    offer     = "CentOs"
+    sku       = "7.7"
+    version   = "latest"
+  }
+
+ /*marketplace_image = {
     publisher = "center-for-internet-security-inc"
     offer     = "cis-rhel-8-l1"
     sku       = "cis-rhel8-l1"
     version   = "latest"
   }
-
   plan = {
-    name      = "cis-rhel8-l1"
-    publisher = "center-for-internet-security-inc"
-    product   = "cis-rhel-8-l1"
-  }
+    name      = "CentOS Server"
+    publisher = "cloud-infrastructure-services"
+    product   = "centos-8-3"
+  }*/
 /*
   ## Install Log Analytics Agent
   deploy_log_analytics_agent = {

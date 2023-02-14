@@ -4,7 +4,7 @@ resource "null_resource" "main" {
     name   = local.vm_name
     domain = var.domain_name
   }
-
+/*
   provisioner "local-exec" {
     command = <<EOT
     infoblox.sh -u -h $host -D $domain -i $ip
@@ -26,5 +26,5 @@ resource "null_resource" "main" {
       host   = self.triggers.name
       domain = self.triggers.domain
     }
-  }
+  }*/
 }

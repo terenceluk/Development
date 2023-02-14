@@ -17,7 +17,13 @@ variable "override_gallery_name" {
 */
 
 variable "bastion_hosts" {
-  type = map(
+  type = map
+
+}
+
+
+  
+  /*(
     object({
     resource_group_name = string
     virtual_network_rg = string
@@ -49,7 +55,7 @@ variable "bastion_hosts" {
     )
   })
   )
-}
+}*/
 
 variable "resource_group_name" {
   type        = string
@@ -108,3 +114,4 @@ variable "tenant_id" {
   type        = string
   description = "Azure App Registration Application Direcotry (tenant) ID"
 }
+
